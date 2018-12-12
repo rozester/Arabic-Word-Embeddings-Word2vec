@@ -9,6 +9,7 @@ Steps to Start this Application:-
 Comming Soon
 
 2- Change this line in Views.py to your directory
+
 model = Word2Vec.load('ToDo from your directory')
 
 3- Start Python Flask server.
