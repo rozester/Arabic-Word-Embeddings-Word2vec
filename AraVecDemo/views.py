@@ -25,7 +25,7 @@ from gensim.models import Word2Vec
 from bidi.algorithm import get_display
 import arabic_reshaper
 
-model = Word2Vec.load('D:\\Engineering\\Software\\Machine Learning\\NLP\\Datasets\\ar_wiki_word2vec')
+model = Word2Vec.load('ToDo from your directory')
 
 @app.route('/')
 @app.route('/home')
