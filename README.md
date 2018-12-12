@@ -6,7 +6,7 @@ Steps to Start this Application:-
 
 1- Download Word2vec file from this link:-
 
-Comming Soon
+https://drive.google.com/open?id=1y_195XEjo5HaSwj40hGVzR5JVp859jfj
 
 2- Change this line in Views.py to your directory
 
