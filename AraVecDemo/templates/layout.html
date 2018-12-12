@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>{{ title }} - Arabic Word-Embeddings</title>
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <link href="https://stallion.ai/assets/css/agency.css" rel="stylesheet">
+    <link href="https://stallion.ai/assets/css/aos.css" rel="stylesheet">
+
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+    <script src="/static/scripts/fontawesome-all.min.js"></script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand" style="padding-top: 15px;">Arabic Word-Embeddings</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content" style="height: 550px; max-width: 1370px;">
+        {% block content %}{% endblock %}
+        <footer style="padding: 0px;">
+            <hr />
+            <p>&copy; {{ year }} Amr Salama - Arabic Word-Embeddings (Word2vec)</p>
+            <div class="col-md-4">
+                <img width="30" src="https://cdn2.iconfinder.com/data/icons/minimalism/512/twitter.png" />amr_salama3
+            </div>
+            <div class="col-md-4">
+                <img width="30" src="https://cdn3.iconfinder.com/data/icons/sociocons/256/linkedin-sociocon.png" />amr-salama2
+            </div>
+            <div class="col-md-4">
+                <img width="30" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1024px-Octicons-mark-github.svg.png" />rozester
+            </div>
+        </footer>
+    </div>
+
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

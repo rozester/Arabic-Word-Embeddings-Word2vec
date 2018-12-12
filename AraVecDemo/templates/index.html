@@ -1,0 +1,109 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#phrase_a').focus();
+
+        $('#btn_answer').click(function () {
+            if ($.trim($('#phrase_a').val()) == '') return;
+            if ($.trim($('#phrase_b').val()) == '') return;
+            if ($.trim($('#phrase_c').val()) == '') return;
+            $("#pca").attr("src", "");
+
+            $.ajax({
+                type: "POST",
+                url: '/most_similar?words=' + $('#phrase_a').val() + "," + $('#phrase_b').val() + "," + $('#phrase_c').val(),
+                success: (data, status, xhr) => {
+                    if (data.answer != null && data.answer != undefined) {
+                        $('#answer').html(data.answer);
+                        $("#pca").attr("src", "/static/" + data.image_url);
+                    }
+                },
+                error: (xhr, status, error) => {
+                    console.log(Date() + " Question Error: " + error);
+                    alert(error);
+                }
+            });
+        });
+
+        $('#btn_nofit').click(function () {
+            if ($.trim($('#phrase_nofit').val()) == '') return;
+            $("#pca").attr("src", "");
+
+            $.ajax({
+                type: "POST",
+                url: '/doesnt_match?words=' + $('#phrase_nofit').val(),
+                success: (data, status, xhr) => {
+                    if (data.answer != null && data.answer != undefined) {
+                        $('#nofit').html(data.answer);
+                        $("#pca").attr("src", "/static/" + data.image_url);
+                    }
+                },
+                error: (xhr, status, error) => {
+                    console.log(Date() + " Question Error: " + error);
+                    alert(error);
+                }
+            });
+        });
+
+        $('#btn_similarity').click(function () {
+            if ($.trim($('#similarity').val()) == '') return;
+            $("#pca").attr("src", "");
+
+            $.ajax({
+                type: "POST",
+                url: '/similarity?words=' + $('#similarity').val(),
+                success: (data, status, xhr) => {
+                    if (data.image_url != null && data.image_url != undefined) {
+                        $("#pca").attr("src", "/static/" + data.image_url);
+                    }
+                },
+                error: (xhr, status, error) => {
+                    console.log(Date() + " Question Error: " + error);
+                    alert(error);
+                }
+            });
+        });
+    });
+</script>
+
+<h1>Bonus app in Arabic</h1>
+<div style="border: 1px solid; border-radius: 6px; border-color: #D7AD7C; padding: 25px;">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <input value="رجل" id="phrase_a" type="text" class="form-control" autocomplete="off" style="width: 100px; display:inline-block;"> is to
+                    <input value="ملك" id="phrase_b" type="text" class="form-control" autocomplete="off" style="width: 100px; display:inline-block;"> as
+                    <input value="امرأة" id="phrase_c" type="text" class="form-control" autocomplete="off" style="width: 100px; display:inline-block;"> is to
+                    <button id="btn_answer" type="button" class="btn btn-warning" style="background-color: #ff2a13;">Answer</button>
+                    <span id="answer"></span>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <input value="موز عنب تفاح كريم" id="phrase_nofit" type="text" class="form-control" autocomplete="off" style="display:inline-block;">
+                    <button id="btn_nofit" type="button" class="btn btn-warning" style="background-color: #ff2a13;">Which phrase doesn't fit?</button>
+                    <span id="nofit"></span>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <input value="مصر" id="similarity" type="text" class="form-control" autocomplete="off" style="display:inline-block;">
+                    <button id="btn_similarity" type="button" class="btn btn-warning" style="background-color: #ff2a13;">Similar words</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img width="600" id="pca" src="" />
+        </div>
+    </div>
+</div>
+
+{% endblock %}
