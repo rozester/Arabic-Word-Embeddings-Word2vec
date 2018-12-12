@@ -1,10 +1,11 @@
-# Arabic-Word-Embeddings-Word2vec
+# Arabic Word Embeddings Word2vec
 
 Thia Arabic Word Embeddings Word2vec and vector length is 300
 
 Steps to Start this Application:-
 
-1- Download Word2vec file from this link
+1- Download Word2vec file from this link:-
+
 Comming Soon
 
 2- Change this line in Views.py to your directory
