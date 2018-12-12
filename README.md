@@ -1,6 +1,6 @@
 # Arabic Word Embeddings Word2vec
 
-Thia Arabic Word Embeddings Word2vec and vector length is 300
+Thia Arabic Word Embeddings Word2vec and vector length is 300 taken from Wikipedia Arabic articles
 
 Steps to Start this Application:-
 
