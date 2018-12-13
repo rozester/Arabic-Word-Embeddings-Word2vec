@@ -4,7 +4,7 @@ Thia Arabic Word Embeddings Word2vec and vector length is 300 taken from Wikiped
 
 Steps to Start this Application:-
 
-1- Download Word2vec file from this link:-
+1- Download pretrained Word2Vec model from this link:-
 
 https://drive.google.com/open?id=1y_195XEjo5HaSwj40hGVzR5JVp859jfj
 
