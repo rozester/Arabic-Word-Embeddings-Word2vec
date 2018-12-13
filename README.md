@@ -16,6 +16,8 @@ model = Word2Vec.load('ToDo from your directory')
 
 Enjoy Arabic Word Embeddings Word2vec ;-)
 
+If you want to know steps of Arabic Text Wrangling see my repository https://github.com/rozester/Arabic-Word2Vec-Wikipedia
+
 Watch it on action
 
 [![Arabic Word Embeddings Word2vec](http://img.youtube.com/vi/EAv2t6DDqB4/0.jpg)](https://www.youtube.com/watch?v=EAv2t6DDqB4 "Arabic Word Embeddings Word2vec")
